@@ -74,10 +74,22 @@ client-lead-management-system/
 ├── .gitignore
 └── README.md
 ```
+## 5. Screenshots
 
+### Login Page
+![Login Page](screenshots/login.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Leads Management
+![Leads Management](screenshots/leads.png)
+
+### Lead Details
+![Lead Details](screenshots/lead-details.png)
 ---
 
-## 5. Requirements
+## 6. Requirements
 
 Install these before you start:
 
@@ -86,20 +98,20 @@ Install these before you start:
 
 ---
 
-## 6. Installation
+## 7. Installation
 
-### 6.1 Extract the project
+### 7.1 Extract the project
 
 Unzip `client-lead-management-system.zip` anywhere on your computer, then open a terminal in the extracted `client-lead-management-system` folder.
 
-### 6.2 Install backend dependencies
+### 7.2 Install backend dependencies
 
 ```bash
 cd server
 npm install
 ```
 
-### 6.3 Install frontend dependencies
+### 7.3 Install frontend dependencies
 
 Open a **second terminal** in the project folder:
 
@@ -110,7 +122,7 @@ npm install
 
 ---
 
-## 7. MongoDB Setup
+## 8. MongoDB Setup
 
 You can use either a local MongoDB installation or MongoDB Atlas (cloud, free tier).
 
@@ -138,9 +150,9 @@ You can use either a local MongoDB installation or MongoDB Atlas (cloud, free ti
 
 ---
 
-## 8. Environment Variables
+## 9. Environment Variables
 
-### 8.1 Backend — `server/.env`
+### 9.1 Backend — `server/.env`
 
 Copy the example file and fill in your own values:
 
@@ -162,7 +174,7 @@ CLIENT_URL=http://localhost:5173
 
 > Never commit your real `.env` file — it is already excluded via `.gitignore`.
 
-### 8.2 Frontend — `client/.env`
+### 9.2 Frontend — `client/.env`
 
 ```bash
 cd client
@@ -177,7 +189,7 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-## 9. Seeding the Database
+## 10. Seeding the Database
 
 This creates the default admin account and 8 sample leads (with a mix of statuses, sources, and follow-up dates) so the dashboard looks populated right away.
 
@@ -190,9 +202,9 @@ You should see output confirming the admin account and sample leads were created
 
 ---
 
-## 10. Running the Application
+## 11. Running the Application
 
-### 10.1 Start the backend
+### 11.1 Start the backend
 
 ```bash
 cd server
@@ -202,7 +214,7 @@ npm run dev
 
 The API will run at `http://localhost:5000`.
 
-### 10.2 Start the frontend
+### 11.2 Start the frontend
 
 In a separate terminal:
 
@@ -215,7 +227,7 @@ The app will run at `http://localhost:5173`.
 
 ---
 
-## 11. Default Demo Login
+## 12. Default Demo Login
 
 After running the seed script:
 
@@ -228,7 +240,7 @@ Password: Admin@123
 
 ---
 
-## 12. API Endpoints
+## 13. API Endpoints
 
 Base URL: `http://localhost:5000/api`
 
@@ -254,7 +266,7 @@ Base URL: `http://localhost:5000/api`
 
 ---
 
-## 13. How to Use the Application
+## 14. How to Use the Application
 
 1. Visit `http://localhost:5173/contact` to see the public contact form — submit it to create a test lead.
 2. Visit `http://localhost:5173/login` and sign in with the demo credentials above.
@@ -266,25 +278,18 @@ Base URL: `http://localhost:5000/api`
 
 ---
 
-## 14. GitHub Upload Instructions
+## 15. Future Improvements
 
-To push this project to your own GitHub repository:
+- Advanced analytics and reporting
+- Email reminders for follow-ups
+- Role-based access for multiple admins
+- Improved lead activity history
+- Deployment for public access 
 
-```bash
-cd client-lead-management-system
-git init
-git add .
-git commit -m "Initial commit: Client Lead Management System (Mini CRM)"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git push -u origin main
-```
-
-Because `.env` files are listed in `.gitignore`, your real secrets will **not** be uploaded — only `.env.example` files are tracked. Anyone cloning the repo should copy `.env.example` to `.env` and fill in their own values, then run the seed script before starting the app.
 
 ---
 
-## 15. Notes for Submission / Demo
+## 16. Notes for Submission / Demo
 
 - The seed script is what populates the dashboard with realistic numbers for a demo — always run `npm run seed` once before presenting.
 - If MongoDB is not running, the backend will log a connection error and exit; start MongoDB first.
